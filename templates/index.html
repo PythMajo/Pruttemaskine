@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruttemaskine</title>
+</head>
+<body>
+    <h1>Pruttemaskine</h1>
+    <button id="runButton">Tilfældig prut</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('runButton').addEventListener('click', async () => {
+            const response = await fetch('/fart/');
+            const result = await response.json();
+            document.getElementById('result').textContent = result.message;
+        });
+    </script>
+</body>
+</html>
